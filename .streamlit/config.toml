@@ -1,0 +1,7 @@
+[theme]
+base="light"                         # Uses Streamlit's light theme as a foundation
+primaryColor="#1976d2"               # Blue accent color for interactive elements
+backgroundColor="#ffffff"            # Pure white background for the main content area
+secondaryBackgroundColor="#f0f0f0"   # Light gray background for widgets/sidebar
+textColor="#333333"                  # Dark gray text for good readability
+font="sans serif"                    # Clean, modern sans-serif font family

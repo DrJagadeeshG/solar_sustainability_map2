@@ -1,0 +1,27 @@
+# requirements.txt
+
+# Core packages
+streamlit
+pandas
+numpy
+
+# Geospatial packages
+geopandas
+folium
+streamlit-folium
+shapely
+
+# Visualization packages
+matplotlib
+plotly
+seaborn
+
+# Data handling
+openpyxl
+xlrd
+pyproj
+fiona
+rtree
+
+# Optimization (optional)
+joblib
