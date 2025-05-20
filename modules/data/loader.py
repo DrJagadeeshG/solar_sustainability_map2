@@ -15,9 +15,10 @@ import os
 from shapely.geometry import Point
 from modules.data.calculator import calculate_averages
 
-# Define the path to your shapefile
-SHAPEFILE_PATH = r"data\shapefiles\Solar_Suitability_layer_optimized.shp"
-ORIGINAL_SHAPEFILE_PATH = r"data\shapefiles\Solar_Suitability_layer.shp"
+# Define the path to your shapefile using relative paths
+# These paths are relative to where the application is run from (project root)
+SHAPEFILE_PATH = os.path.join("data", "shapefiles", "Solar_Suitability_layer_optimized.shp")
+ORIGINAL_SHAPEFILE_PATH = os.path.join("data", "shapefiles", "Solar_Suitability_layer.shp")
 
 @st.cache_data(ttl=3600)  # Cache for 1 hour
 def load_shapefile_data():
@@ -42,6 +43,8 @@ def load_shapefile_data():
             gdf = gpd.read_file(ORIGINAL_SHAPEFILE_PATH)
         else:
             st.warning(f"Neither optimized nor original shapefile found at the specified paths.")
+            st.warning(f"Looking for files at: {os.path.abspath(SHAPEFILE_PATH)} or {os.path.abspath(ORIGINAL_SHAPEFILE_PATH)}")
+            st.warning(f"Current working directory: {os.getcwd()}")
             raise FileNotFoundError(f"Could not find shapefile at {SHAPEFILE_PATH} or {ORIGINAL_SHAPEFILE_PATH}")
         
         # Make sure GW_dev_sta is numeric
