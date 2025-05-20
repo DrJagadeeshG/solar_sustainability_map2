@@ -16,8 +16,8 @@ from shapely.geometry import Point
 from modules.data.calculator import calculate_averages
 
 # Define the path to your shapefile
-SHAPEFILE_PATH = r".\data\shapefiles\Solar_Suitability_layer_optimized.shp"
-ORIGINAL_SHAPEFILE_PATH = r".\data\shapefiles\Solar_Suitability_layer.shp"
+SHAPEFILE_PATH = r"data\shapefiles\Solar_Suitability_layer_optimized.shp"
+ORIGINAL_SHAPEFILE_PATH = r"data\shapefiles\Solar_Suitability_layer.shp"
 
 @st.cache_data(ttl=3600)  # Cache for 1 hour
 def load_shapefile_data():
